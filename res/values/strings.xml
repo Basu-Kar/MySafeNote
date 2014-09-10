@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">MySafeNote</string>
+    <string name="action_settings">Settings</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="home_pwd_ptrotc_label">Enable Safe Note</string>
+    <string name="home_lock_label">Password</string>
+    <string name="home_note_label">Note Subject</string>
+    <string name="home_text_dflt">(max 30 chars)</string>
+    <string name="home_note_btn">Create</string>
+
+    <color name="bgcolor">#B18904</color>
+
+    <string name="title_activity_add_note">AddNoteActivity</string>
+    <string name="title_activity_enable_pwd">EnablePwdActivity</string>
+    <string name="title_activity_reset_pwd">ResetPwdActivity</string>
+    <string name="add_note_type_label">SBI Account</string>
+    <string name="title_activity_password">PasswordActivity</string>
+    <string name="title_activity_show_note">ShowNoteActivity</string>
+
+</resources>
