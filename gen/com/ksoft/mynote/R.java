@@ -31,20 +31,22 @@ public final class R {
     }
     public static final class id {
         public static final int action_settings=0x7f09000e;
+        public static final int add_note_subject_id=0x7f090000;
         public static final int button1=0x7f090002;
         public static final int button2=0x7f090003;
         public static final int editText1=0x7f090001;
-        public static final int editText2=0x7f090005;
-        public static final int editText3=0x7f09000d;
-        public static final int home_note_btn_id=0x7f09000c;
-        public static final int home_note_label_id=0x7f09000b;
-        public static final int home_pwd_ptrotc_id=0x7f090009;
-        public static final int home_text_edit_id=0x7f09000a;
-        public static final int textView1=0x7f090000;
-        public static final int textView2=0x7f090004;
-        public static final int textView3=0x7f090006;
-        public static final int textView4=0x7f090008;
-        public static final int textView5=0x7f090007;
+        public static final int editText2=0x7f090006;
+        public static final int editText3=0x7f09000c;
+        public static final int home_menu_enbpwd_action_id=0x7f09000f;
+        public static final int home_menu_rstpwd_action_id=0x7f090010;
+        public static final int home_note_btn_id=0x7f09000b;
+        public static final int home_note_label_id=0x7f09000a;
+        public static final int home_text_edit_id=0x7f090009;
+        public static final int textView1=0x7f090004;
+        public static final int textView2=0x7f090005;
+        public static final int textView3=0x7f090007;
+        public static final int textView4=0x7f09000d;
+        public static final int textView5=0x7f090008;
     }
     public static final class layout {
         public static final int activity_add_note=0x7f030000;
@@ -64,19 +66,21 @@ public final class R {
     }
     public static final class string {
         public static final int action_settings=0x7f060001;
-        public static final int add_note_type_label=0x7f06000b;
+        public static final int add_note_type_label=0x7f06000d;
         public static final int app_name=0x7f060000;
         public static final int hello_world=0x7f060002;
-        public static final int home_lock_label=0x7f060004;
-        public static final int home_note_btn=0x7f060007;
-        public static final int home_note_label=0x7f060005;
-        public static final int home_pwd_ptrotc_label=0x7f060003;
-        public static final int home_text_dflt=0x7f060006;
-        public static final int title_activity_add_note=0x7f060008;
-        public static final int title_activity_enable_pwd=0x7f060009;
-        public static final int title_activity_password=0x7f06000c;
-        public static final int title_activity_reset_pwd=0x7f06000a;
-        public static final int title_activity_show_note=0x7f06000d;
+        public static final int home_lock_label=0x7f060006;
+        public static final int home_menu_enbpwd_lbl=0x7f060003;
+        public static final int home_menu_rstpwd_lbl=0x7f060004;
+        public static final int home_note_btn=0x7f060009;
+        public static final int home_note_label=0x7f060007;
+        public static final int home_pwd_ptrotc_label=0x7f060005;
+        public static final int home_text_dflt=0x7f060008;
+        public static final int title_activity_add_note=0x7f06000a;
+        public static final int title_activity_enable_pwd=0x7f06000b;
+        public static final int title_activity_password=0x7f06000e;
+        public static final int title_activity_reset_pwd=0x7f06000c;
+        public static final int title_activity_show_note=0x7f06000f;
     }
     public static final class style {
         /** 

@@ -24,23 +24,44 @@
         </activity>
         <activity
             android:name="com.ksoft.mynote.AddNoteActivity"
-            android:label="@string/title_activity_add_note" >
+            android:label="@string/title_activity_add_note" 
+            android:parentActivityName="com.ksoft.mynote.HomeActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.ksoft.mynote.HomeActivity" />
         </activity>
+        
         <activity
             android:name="com.ksoft.mynote.EnablePwdActivity"
-            android:label="@string/title_activity_enable_pwd" >
+            android:label="@string/title_activity_enable_pwd" 
+            android:parentActivityName="com.ksoft.mynote.HomeActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.ksoft.mynote.HomeActivity" />
         </activity>
         <activity
             android:name="com.ksoft.mynote.ResetPwdActivity"
-            android:label="@string/title_activity_reset_pwd" >
+            android:label="@string/title_activity_reset_pwd" 
+            android:parentActivityName="com.ksoft.mynote.HomeActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.ksoft.mynote.HomeActivity" />
         </activity>
         <activity
             android:name="com.ksoft.mynote.PasswordActivity"
-            android:label="@string/title_activity_password" >
+            android:label="@string/title_activity_password" 
+            android:parentActivityName="com.ksoft.mynote.HomeActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.ksoft.mynote.HomeActivity" />
         </activity>
         <activity
             android:name="com.ksoft.mynote.ShowNoteActivity"
-            android:label="@string/title_activity_show_note" >
+            android:label="@string/title_activity_show_note" 
+            android:parentActivityName="com.ksoft.mynote.HomeActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.ksoft.mynote.HomeActivity" />
         </activity>
     </application>
 

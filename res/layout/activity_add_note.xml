@@ -11,7 +11,7 @@
     >
 
     <TextView
-        android:id="@+id/textView1"
+        android:id="@+id/add_note_subject_id"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
@@ -26,10 +26,11 @@
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:layout_alignParentRight="true"
-        android:layout_below="@+id/textView1"
+        android:layout_below="@+id/add_note_subject_id"
         android:layout_marginTop="65dp"
         android:ems="10"
         android:gravity="center"
+        
 	    android:singleLine="false"
 	    android:lines="10"
 	    android:scrollHorizontally="true"

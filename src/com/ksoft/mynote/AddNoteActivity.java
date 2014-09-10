@@ -2,7 +2,9 @@ package com.ksoft.mynote;
 
 import android.os.Bundle;
 import android.app.Activity;
+import android.content.Intent;
 import android.view.Menu;
+import android.widget.TextView;
 
 public class AddNoteActivity extends Activity {
 
@@ -10,6 +12,10 @@ public class AddNoteActivity extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_add_note);
+		Intent intent = getIntent();
+		TextView userNameView = (TextView) findViewById(R.id.add_note_subject_id);
+		userNameView.setText(intent.getStringExtra("subjectId"));
+		
 	}
 
 	@Override

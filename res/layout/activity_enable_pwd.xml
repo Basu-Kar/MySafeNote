@@ -17,7 +17,7 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
         android:layout_marginTop="75dp"
-        android:text="Password"
+        android:text="New Password"
         android:textAppearance="?android:attr/textAppearanceMedium" />
 
     <EditText
@@ -26,9 +26,9 @@
         android:layout_height="wrap_content"
         android:layout_alignBottom="@+id/textView1"
         android:layout_alignParentRight="true"
-        android:ems="10" 
-        android:hint="(max 20 chars)"
-        >
+        android:layout_toRightOf="@+id/textView1"
+        android:ems="10"
+        android:hint="(max 20 chars)" >
 
         <requestFocus />
     </EditText>
@@ -72,16 +72,6 @@
         android:layout_below="@+id/textView2"
         android:layout_marginTop="36dp"
         android:text="What is your favorite color?"
-        android:textAppearance="?android:attr/textAppearanceMedium" />
-
-    <TextView
-        android:id="@+id/textView4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/editText1"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="26dp"
-        android:text="Password Setting"
         android:textAppearance="?android:attr/textAppearanceMedium" />
 
     <Button
