@@ -29,8 +29,8 @@
         android:layout_below="@+id/add_note_subject_id"
         android:layout_marginTop="65dp"
         android:ems="10"
-        android:gravity="center"
-        
+        android:gravity="top"
+       	
 	    android:singleLine="false"
 	    android:lines="10"
 	    android:scrollHorizontally="true"

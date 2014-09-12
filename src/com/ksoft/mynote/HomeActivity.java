@@ -3,8 +3,12 @@ package com.ksoft.mynote;
 
 
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
+import android.content.SharedPreferences.Editor;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Button;
@@ -20,6 +24,16 @@ public class HomeActivity extends Activity implements View.OnClickListener{
 		setContentView(R.layout.activity_home);
 		Button btn = (Button) findViewById(R.id.home_note_btn_id);
 		btn.setOnClickListener(this);
+		SharedPreferences settings = getSharedPreferences("Test", Context.MODE_PRIVATE);
+		
+		
+		
+		//SharedPreferences settings2 = PreferenceManager.getDefaultSharedPreferences(this);
+		//String url = settings2.getString("url", "n/a"); 
+		
+		//Editor edit = settings2.edit();
+		//edit.putString("username", "new_value_for_user");
+		//edit.apply(); 
 	}
 
 	@Override
@@ -46,6 +60,8 @@ public class HomeActivity extends Activity implements View.OnClickListener{
             // Single menu item is selected do something
             // Ex: launching new activity/screen or show alert message
             Toast.makeText(HomeActivity.this, "Reset Password Selected", Toast.LENGTH_SHORT).show();
+            Intent resetPwdIntent = new Intent(this, ResetPwdActivity.class);
+            startActivity(resetPwdIntent);
             return true;
             
         }
