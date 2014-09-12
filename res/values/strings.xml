@@ -14,7 +14,8 @@
     <string name="home_text_dflt">(max 30 chars)</string>
     <string name="home_note_btn">Add Note</string>
 
-    <color name="bgcolor">#B18904</color>
+    <color name="bgcolor">#B06E6E</color>
+    <color name="action_bar_bgcolor">#2E64FE</color>
 
     <string name="title_activity_add_note">AddNoteActivity</string>
     <string name="title_activity_enable_pwd">EnablePwdActivity</string>

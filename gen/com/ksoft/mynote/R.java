@@ -11,6 +11,7 @@ public final class R {
     public static final class attr {
     }
     public static final class color {
+        public static final int action_bar_bgcolor=0x7f070001;
         public static final int bgcolor=0x7f070000;
     }
     public static final class dimen {
@@ -20,8 +21,8 @@ public final class R {
          screen margins) for sw720dp devices (e.g. 10" tablets) in landscape here.
     
          */
-        public static final int activity_horizontal_margin=0x7f040000;
-        public static final int activity_vertical_margin=0x7f040001;
+        public static final int activity_horizontal_margin=0x7f050000;
+        public static final int activity_vertical_margin=0x7f050001;
     }
     public static final class drawable {
         public static final int back=0x7f020000;
@@ -104,11 +105,16 @@ public final class R {
     
  API 14 theme customizations can go here. 
          */
-        public static final int AppBaseTheme=0x7f050001;
+        public static final int AppBaseTheme=0x7f040004;
         /**  Application theme. 
  All customizations that are NOT specific to a particular API-level can go here. 
          */
-        public static final int AppTheme=0x7f050002;
-        public static final int CodeFont=0x7f050000;
+        public static final int AppTheme=0x7f040005;
+        public static final int CodeFont=0x7f040003;
+        /**  ActionBar styles 
+         */
+        public static final int MyActionBar=0x7f040002;
+        public static final int MyListView=0x7f040001;
+        public static final int MyTheme=0x7f040000;
     }
 }
