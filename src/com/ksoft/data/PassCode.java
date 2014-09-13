@@ -6,6 +6,20 @@ public class PassCode {
 	private String passcode;
 	private String hintAns; 
 	private String hintQstn;
+	
+	public PassCode(){}
+	
+	public PassCode(int id,String passcode,String hintAns){
+		this.id=id;
+		this.passcode=passcode;
+		this.hintAns=hintAns;		
+	}
+	
+	public PassCode(String passcode,String hintAns){
+		this.passcode=passcode;
+		this.hintAns=hintAns;		
+	}
+	
 	public int getId() {
 		return id;
 	}

@@ -18,42 +18,50 @@
         android:layout_alignParentTop="true"
         android:layout_marginLeft="92dp"
         android:layout_marginTop="15dp"
-        android:text="@string/add_note_type_label" />
-
-    <EditText
-        android:id="@+id/editText1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentRight="true"
-        android:layout_below="@+id/add_note_subject_id"
-        android:layout_marginTop="65dp"
-        android:ems="10"
-        android:gravity="top"
-       	
-	    android:singleLine="false"
-	    android:lines="10"
-	    android:scrollHorizontally="true"
-        android:inputType="textMultiLine" 
-        android:background="@drawable/back"
+        android:text="@string/add_note_type_label" 
+        style="@style/ViewTextFont"
+        android:textSize="30sp"
         />
 
     <Button
-        android:id="@+id/button1"
+        android:id="@+id/add_note_saveandexit"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
-        android:layout_below="@+id/editText1"
+        android:layout_below="@+id/editNote"
         android:layout_marginTop="20dp"
         android:text="Save and AddNew" />
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/add_note_saveandaddnew"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/button1"
-        android:layout_alignBottom="@+id/button1"
+        android:layout_alignBaseline="@+id/add_note_saveandexit"
+        android:layout_alignBottom="@+id/add_note_saveandexit"
         android:layout_alignParentRight="true"
-        android:text="SaveAndExit" />
+        android:text="Save and Exit" />
+
+    <EditText
+        android:id="@+id/editNote"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/add_note_saveandexit"
+        android:layout_alignRight="@+id/add_note_saveandaddnew"
+        android:layout_below="@+id/add_note_subject_id"
+        android:layout_marginTop="24dp"
+        android:background="@drawable/edit_text"
+        android:ems="10"
+        android:gravity="top"
+        android:inputType="textMultiLine"
+        android:lines="10"
+        android:maxLength="200"
+        android:scrollHorizontally="true"
+        android:singleLine="false"
+        android:textColor="@color/home_edit_textcolor"
+        android:textSize="21sp"
+        android:textStyle="normal|bold" >
+
+        <requestFocus />
+    </EditText>
 
 </RelativeLayout>

@@ -5,7 +5,7 @@
     android:versionName="1.0" >
 
     <uses-sdk
-        android:minSdkVersion="8"
+        android:minSdkVersion="16"
         android:targetSdkVersion="18" />
 
     <application
@@ -34,7 +34,8 @@
         <activity
             android:name="com.ksoft.mynote.EnablePwdActivity"
             android:label="@string/title_activity_enable_pwd" 
-            android:parentActivityName="com.ksoft.mynote.HomeActivity" >
+            android:parentActivityName="com.ksoft.mynote.HomeActivity" 
+            >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.ksoft.mynote.HomeActivity" />

@@ -7,7 +7,9 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context=".HomeActivity" >
+    tools:context=".HomeActivity" 
+    
+    >
 
     <EditText
         android:id="@+id/home_text_edit_id"
@@ -16,9 +18,15 @@
         android:layout_alignBottom="@+id/home_note_label_id"
         android:layout_toRightOf="@+id/home_note_label_id"
         android:ems="10"
-        android:hint="@string/home_text_dflt" >
+        android:hint="@string/home_text_dflt" 
+        android:background="@drawable/edit_text"
+        android:textColor="@color/home_edit_textcolor"
+        android:textSize="21sp"
+        android:maxLength="25"
+        android:inputType="textFilter"
+        android:textStyle="normal|bold"
+        >
 
-        <requestFocus />
     </EditText>
 
     <Button
@@ -31,24 +39,41 @@
         android:text="@string/home_note_btn" />
 
     <TextView
-        android:id="@+id/home_note_label_id"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/textView2"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="48dp"
-        android:text="@string/home_note_label"
-        android:textAppearance="?android:attr/textAppearanceMedium" />
-
-    <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/notes_display_header"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:layout_below="@+id/home_note_btn_id"
         android:layout_marginLeft="14dp"
         android:layout_marginTop="25dp"
-        android:text="Select Notes to view details"
+        android:text=""
+        android:textAppearance="?android:attr/textAppearanceMedium" 
+        style="@style/ViewTextFont"
+        
+        />
+
+    <TextView
+        android:id="@+id/home_note_label_id"
+        style="@style/ViewTextFont"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:paddingRight="5sp"
+        android:text="@string/home_note_label"
         android:textAppearance="?android:attr/textAppearanceMedium" />
 
+     <ListView
+        android:id="@android:id/list"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:dividerHeight="2dp"
+        android:layout_below="@+id/home_note_btn_id"
+        android:layout_alignParentLeft="true"
+        android:background="@drawable/listview_note"
+        
+        ></ListView>
+        
+            
+    
 </RelativeLayout>

@@ -10,18 +10,27 @@
     
     <string name="home_pwd_ptrotc_label">Enable Safe Note</string>
     <string name="home_lock_label">Password</string>
-    <string name="home_note_label">Note Subject</string>
-    <string name="home_text_dflt">(max 30 chars)</string>
+    <string name="home_note_label">Note Title</string>
+    <string name="home_text_dflt">(max 25 chars)</string>
     <string name="home_note_btn">Add Note</string>
 
     <color name="bgcolor">#C1C636</color>
     <color name="action_bar_bgcolor">#363BC6</color>
+    <color name="action_bar_textcolor">#363BC6</color>
+	<color name="home_edit_textcolor">#B010D4</color>
+	<color name="home_listview_textcolor">#D296B6</color>
 
-    <string name="title_activity_add_note">AddNoteActivity</string>
-    <string name="title_activity_enable_pwd">EnablePwdActivity</string>
-    <string name="title_activity_reset_pwd">ResetPwdActivity</string>
+
+    <string name="title_activity_add_note">Add Note</string>
+    <string name="title_activity_enable_pwd">Enable Password</string>
+    <string name="title_activity_reset_pwd">Reset Passowrd</string>
     <string name="add_note_type_label">SBI Account</string>
-    <string name="title_activity_password">PasswordActivity</string>
-    <string name="title_activity_show_note">ShowNoteActivity</string>
-
+    <string name="title_activity_password">Enter Password</string>
+    <string name="title_activity_show_note">Show Notes</string>
+    
+    <string name="delete_subject">Delete Note</string>
+	<string name="edit_subject">Edit Note</string>
+    <string name="view_subject">View Note</string>
+	
+    
 </resources>
