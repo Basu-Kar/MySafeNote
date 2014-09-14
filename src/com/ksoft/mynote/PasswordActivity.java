@@ -6,8 +6,10 @@ import com.ksoft.data.PassCodeData;
 import android.os.Bundle;
 import android.app.Activity;
 import android.content.Intent;
+import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -25,7 +27,29 @@ public class PasswordActivity extends Activity implements View.OnClickListener{
 		
 		passCodeData = new PassCodeData(this);
 		passCodeData.open();
+		if(!passCodeData.isPassCodePresent()){
+			Intent intent = new Intent(this, EnablePwdActivity.class);
+            startActivity(intent);
+		}
 		
+		TextView pwdView = (TextView) findViewById(R.id.pwd_Text);
+		/*pwdView.setOnClickListener(new View.OnClickListener() {
+
+		    @Override
+		    public void onClick(View v) {
+		    	((TextView)v).setError(null);
+
+		    }
+		});*/
+		pwdView.setOnTouchListener((new View.OnTouchListener() {
+			
+			@Override
+			public boolean onTouch(View v, MotionEvent arg1) {
+				// TODO Auto-generated method stub
+				((TextView)v).setError(null);
+				return false;
+			}
+		}));
 	}
 
 	@Override

@@ -23,4 +23,6 @@ public interface NoteConstant {
 	public static final String COLUMN_ACT_TYPE = "acttype";
 	public static final String COLUMN_UNAME = "uname";
 	public static final String COLUMN_PASSWORD = "password";
+	
+	public static final String APP_KEY="bareswar-Mugupur";
 }

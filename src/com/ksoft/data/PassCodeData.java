@@ -102,13 +102,14 @@ public class PassCodeData {
 		Cursor cursor = database.query(NOTE_PASSCODE_TABLE,
 	    		all_pwd_Columns, null, null,null, null, null);
 	    
-		
+		System.out.println("cursor.getCount() "+cursor.getCount());
 		if(cursor.getCount()<=0){
-		 return false;	
+			return false;	
 		}
 	    cursor.moveToFirst();
 	    PassCode passCodeObj = new PassCode(cursor.getInt(0),cursor.getString(1),cursor.getString(2));
 	    cursor.close();
+	    System.out.println("passCodeObj: "+passCodeObj.getId());
 	    if(passCodeObj!=null &&  passCodeObj.getId()!=0){
 	    	return true;
 	    }else{

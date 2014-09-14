@@ -36,35 +36,34 @@ public final class R {
         public static final int note_lunch=0x7f020005;
     }
     public static final class id {
-        public static final int action_settings=0x7f090017;
-        public static final int add_note_rstpwd_action_id=0x7f090016;
+        public static final int action_settings=0x7f090016;
+        public static final int add_note_rstpwd_action_id=0x7f090015;
         public static final int add_note_saveandaddnew=0x7f090003;
         public static final int add_note_saveandexit=0x7f090001;
         public static final int add_note_subject_id=0x7f090000;
-        public static final int button1=0x7f090015;
-        public static final int delete_item=0x7f09001b;
+        public static final int button1=0x7f090014;
+        public static final int delete_item=0x7f09001a;
         public static final int editNote=0x7f090002;
-        public static final int edit_item=0x7f09001a;
-        public static final int hint_ans=0x7f090007;
-        public static final int home_menu_rstpwd_action_id=0x7f090018;
-        public static final int home_note_btn_id=0x7f09000d;
-        public static final int home_note_label_id=0x7f09000c;
-        public static final int home_text_edit_id=0x7f09000b;
+        public static final int edit_item=0x7f090019;
+        public static final int hint_ans=0x7f090008;
+        public static final int home_menu_rstpwd_action_id=0x7f090017;
+        public static final int home_note_btn_id=0x7f09000c;
+        public static final int home_note_label_id=0x7f09000b;
+        public static final int home_text_edit_id=0x7f09000a;
         public static final int new_password=0x7f090005;
-        public static final int new_pwd=0x7f090012;
-        public static final int notes_display_header=0x7f09000e;
-        public static final int old_pwd=0x7f090011;
-        public static final int pwd_Text=0x7f090010;
-        public static final int pwd_save=0x7f09000f;
-        public static final int reset_menu_pwd_action_id=0x7f09001c;
-        public static final int reset_pwd=0x7f090014;
-        public static final int save_pwd=0x7f09000a;
+        public static final int new_pwd=0x7f090011;
+        public static final int notes_display_header=0x7f09000d;
+        public static final int old_pwd=0x7f090010;
+        public static final int pwd_Text=0x7f09000f;
+        public static final int pwd_save=0x7f09000e;
+        public static final int reset_menu_pwd_action_id=0x7f09001b;
+        public static final int reset_pwd=0x7f090013;
+        public static final int save_pwd=0x7f090007;
         public static final int textView1=0x7f090004;
-        public static final int textView2=0x7f090006;
-        public static final int textView3=0x7f090008;
-        public static final int textView4=0x7f090013;
+        public static final int textView3=0x7f090006;
+        public static final int textView4=0x7f090012;
         public static final int textView5=0x7f090009;
-        public static final int view_item=0x7f090019;
+        public static final int view_item=0x7f090018;
     }
     public static final class layout {
         public static final int activity_add_note=0x7f030000;

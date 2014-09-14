@@ -184,7 +184,7 @@ public class HomeActivity extends ListActivity implements View.OnClickListener{
 		return valid;
 	}
 	
-	public class PwdEntryAdapter extends BaseAdapter{
+/*	public class PwdEntryAdapter extends BaseAdapter{
 
 		private Context context;
 
@@ -229,5 +229,5 @@ public class HomeActivity extends ListActivity implements View.OnClickListener{
 		
 	}
 
-
+*/
 }
