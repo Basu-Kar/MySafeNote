@@ -22,7 +22,7 @@ public class ResetPwdActivity extends Activity implements View.OnClickListener{
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_reset_pwd);
 		
-		Button btn = (Button) findViewById(R.id.reset_pwd);
+		Button btn = (Button) findViewById(R.id.reset_btn);
 		btn.setOnClickListener(this);
 		passCodeData = new PassCodeData(this);
 		passCodeData.open();

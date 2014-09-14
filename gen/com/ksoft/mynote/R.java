@@ -46,22 +46,23 @@ public final class R {
         public static final int editNote=0x7f090002;
         public static final int edit_item=0x7f090019;
         public static final int hint_ans=0x7f090008;
+        public static final int home_menu_clrall_action_id=0x7f09001b;
         public static final int home_menu_rstpwd_action_id=0x7f090017;
         public static final int home_note_btn_id=0x7f09000c;
         public static final int home_note_label_id=0x7f09000b;
         public static final int home_text_edit_id=0x7f09000a;
         public static final int new_password=0x7f090005;
-        public static final int new_pwd=0x7f090011;
+        public static final int new_pwd=0x7f090010;
         public static final int notes_display_header=0x7f09000d;
-        public static final int old_pwd=0x7f090010;
+        public static final int old_pwd=0x7f090013;
         public static final int pwd_Text=0x7f09000f;
         public static final int pwd_save=0x7f09000e;
-        public static final int reset_menu_pwd_action_id=0x7f09001b;
-        public static final int reset_pwd=0x7f090013;
+        public static final int reset_btn=0x7f090012;
+        public static final int reset_menu_pwd_action_id=0x7f09001c;
         public static final int save_pwd=0x7f090007;
         public static final int textView1=0x7f090004;
         public static final int textView3=0x7f090006;
-        public static final int textView4=0x7f090012;
+        public static final int textView4=0x7f090011;
         public static final int textView5=0x7f090009;
         public static final int view_item=0x7f090018;
     }
@@ -84,24 +85,25 @@ public final class R {
     }
     public static final class string {
         public static final int action_settings=0x7f060001;
-        public static final int add_note_type_label=0x7f06000d;
+        public static final int add_note_type_label=0x7f06000e;
         public static final int app_name=0x7f060000;
-        public static final int delete_subject=0x7f060010;
-        public static final int edit_subject=0x7f060011;
+        public static final int delete_subject=0x7f060011;
+        public static final int edit_subject=0x7f060012;
         public static final int hello_world=0x7f060002;
-        public static final int home_lock_label=0x7f060006;
+        public static final int home_lock_label=0x7f060007;
+        public static final int home_menu_clrall_lbl=0x7f060005;
         public static final int home_menu_enbpwd_lbl=0x7f060003;
         public static final int home_menu_rstpwd_lbl=0x7f060004;
-        public static final int home_note_btn=0x7f060009;
-        public static final int home_note_label=0x7f060007;
-        public static final int home_pwd_ptrotc_label=0x7f060005;
-        public static final int home_text_dflt=0x7f060008;
-        public static final int title_activity_add_note=0x7f06000a;
-        public static final int title_activity_enable_pwd=0x7f06000b;
-        public static final int title_activity_password=0x7f06000e;
-        public static final int title_activity_reset_pwd=0x7f06000c;
-        public static final int title_activity_show_note=0x7f06000f;
-        public static final int view_subject=0x7f060012;
+        public static final int home_note_btn=0x7f06000a;
+        public static final int home_note_label=0x7f060008;
+        public static final int home_pwd_ptrotc_label=0x7f060006;
+        public static final int home_text_dflt=0x7f060009;
+        public static final int title_activity_add_note=0x7f06000b;
+        public static final int title_activity_enable_pwd=0x7f06000c;
+        public static final int title_activity_password=0x7f06000f;
+        public static final int title_activity_reset_pwd=0x7f06000d;
+        public static final int title_activity_show_note=0x7f060010;
+        public static final int view_subject=0x7f060013;
     }
     public static final class style {
         /** 

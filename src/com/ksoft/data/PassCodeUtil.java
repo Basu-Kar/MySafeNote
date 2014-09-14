@@ -5,12 +5,12 @@ import java.security.Key;
 import javax.crypto.Cipher;
 import javax.crypto.spec.SecretKeySpec;
 
-public class PassCodeUtil {
+public abstract class PassCodeUtil {
 
 	private static final String APP_KEY="mUGupUruMuGuPuRu";
 	private static final String ENCODING= "ISO-8859-1";
 	
-	public String getAppPassCode(String userPassCode){
+	private static String getAppPassCode(String userPassCode){
 		String appPassCode=userPassCode;
 		if(userPassCode.length()<16){
 			appPassCode = appPassCode+APP_KEY.substring(0,(APP_KEY.length()-userPassCode.length()));
@@ -18,7 +18,7 @@ public class PassCodeUtil {
 		return appPassCode;
 	}
 	
-	public String encryptedData(String userkey, String userData){
+	public static String encryptedData(String userkey, String userData){
 		String encryptedUserData="";
 	  try {
 		  
@@ -37,7 +37,7 @@ public class PassCodeUtil {
         }
 	  return encryptedUserData;
 	}
-	public String decryptedData(String userkey, String encryptedData){
+	public static String decryptedData(String userkey, String encryptedData){
 		String decryptedUserData="";
 		try { 
            String key = getAppPassCode(userkey);
@@ -56,7 +56,7 @@ public class PassCodeUtil {
 	}
 
 	
-	public String encryptedPassword(String key, String userData){
+	public static String encryptedPassword(String key, String userData){
 		String encryptedUserData="";
 	  try {
 		  
@@ -74,7 +74,7 @@ public class PassCodeUtil {
         }
 	  return encryptedUserData;
 	}
-	public String decryptedPassword(String key, String encryptedData){
+	public static String decryptedPassword(String key, String encryptedData){
 		String decryptedUserData="";
 		try { 
            // Create key and cipher

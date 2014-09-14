@@ -71,6 +71,8 @@ public class PasswordActivity extends Activity implements View.OnClickListener{
 	            Intent resetPwdIntent = new Intent(this, ResetPwdActivity.class);
 	            startActivity(resetPwdIntent);
 	            return true;
+        	case R.id.home_menu_clrall_action_id:
+        		passCodeData.deletePassCode();
             
         }
         return false;
@@ -81,7 +83,7 @@ public class PasswordActivity extends Activity implements View.OnClickListener{
 		TextView pwdView = (TextView) findViewById(R.id.pwd_Text);
 		System.out.println("subjectId: "+pwdView.getText());
 		
-		if(isValidEntry()){
+		if(isPwdExists() && isValidEntry()){
 			Intent intent = new Intent(this, HomeActivity.class);
 			   
 		    intent.putExtra("virified", true);
@@ -105,14 +107,16 @@ public class PasswordActivity extends Activity implements View.OnClickListener{
 			valid = false;
 		}
 		
-		
-		/*List<PasswordEntry> values = passwordDAO.getAccount(acTypeView.getText().toString());
-		if(values!=null && values.size()>0){
-			acTypeView.setError("Already Exists");
-			valid = false;
-		}*/
 		return valid;
 	}
-	
+	private boolean isPwdExists(){
+		
+		if(!passCodeData.isPassCodePresent()){
+			Intent intent = new Intent(this, EnablePwdActivity.class);
+	        startActivity(intent);
+		}
+		return true;
+		
+	}
 
 }

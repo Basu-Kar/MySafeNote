@@ -17,17 +17,8 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
         android:layout_marginTop="92dp"
-        android:text="Old password"
-        android:textAppearance="?android:attr/textAppearanceMedium" />
-
-    <EditText
-        android:id="@+id/old_pwd"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentRight="true"
-        android:layout_below="@+id/textView1"
-        android:ems="10" 
-        android:hint="(max 20 chars)"
+        android:text="Old Password"
+        android:textAppearance="?android:attr/textAppearanceMedium" 
         />
 
     <TextView
@@ -50,11 +41,43 @@
         android:text="Reset your password"
         android:textAppearance="?android:attr/textAppearanceLarge" />
 
+    <Button
+        android:id="@+id/reset_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignRight="@+id/hint_ans"
+        android:layout_below="@+id/hint_ans"
+        android:layout_marginRight="14dp"
+        android:text="Reset" />
+
+    <EditText
+        android:id="@+id/old_pwd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/textView1"
+        android:layout_alignParentRight="true"
+        android:layout_toRightOf="@+id/textView1"
+        android:ems="10"
+        android:hint="(max 20 chars)" 
+        android:layout_marginLeft="5sp"
+        android:background="@drawable/edit_text"
+        android:inputType="textFilter"
+        android:maxLength="25"
+        android:textColor="@color/home_edit_textcolor"
+        android:textSize="21sp"
+        android:textStyle="normal|bold"
+        >
+
+        <requestFocus />
+    </EditText>
+
     <TextView
         android:id="@+id/textView5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/old_pwd"
+        android:layout_alignLeft="@+id/textView1"
+        android:layout_below="@+id/textView1"
+        android:layout_marginTop="36dp"
         android:text="New Password"
         android:textAppearance="?android:attr/textAppearanceMedium" />
 
@@ -62,29 +85,39 @@
         android:id="@+id/new_pwd"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/old_pwd"
-        android:layout_below="@+id/textView5"
-        android:ems="10" 
-        android:hint="(max 20 chars)"
+        android:layout_alignBaseline="@+id/textView5"
+        android:layout_alignBottom="@+id/textView5"
+        android:layout_toRightOf="@+id/textView5"
+        android:ems="10"
+        android:hint="(max 20 chars)" 
+        android:layout_marginLeft="5sp"
+        android:background="@drawable/edit_text"
+        android:inputType="textFilter"
+        android:maxLength="25"
+        android:textColor="@color/home_edit_textcolor"
+        android:textSize="21sp"
+        android:textStyle="normal|bold"
+        
         />
-
-    <Button
-        android:id="@+id/reset_pwd"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/hint_ans"
-        android:layout_below="@+id/hint_ans"
-        android:layout_marginTop="14dp"
-        android:text="Reset Password" />
 
     <EditText
         android:id="@+id/hint_ans"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/new_pwd"
+        android:layout_alignRight="@+id/textView3"
         android:layout_below="@+id/textView3"
-        android:layout_marginTop="14dp"
         android:ems="10"
-        android:hint="(max 20 chars)" />
+        android:hint="(max 20 chars)" 
+          
+        android:layout_marginLeft="5sp"
+        android:background="@drawable/edit_text"
+        android:inputType="textFilter"
+        android:maxLength="25"
+        android:textColor="@color/home_edit_textcolor"
+        android:textSize="21sp"
+        android:textStyle="normal|bold"
+        
+        
+        />
 
 </RelativeLayout>

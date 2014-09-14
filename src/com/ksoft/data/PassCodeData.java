@@ -23,9 +23,13 @@ public class PassCodeData {
 		database.delete(NOTE_PASSCODE_TABLE, null,null);
 	}
 	public PassCode insertPassCode(PassCode paascode){
+		
+		String passCodeEnc = PassCodeUtil.encryptedPassword(NoteConstant.APP_KEY, paascode.getPasscode());
+		String hintAnsEnc = PassCodeUtil.encryptedPassword(NoteConstant.APP_KEY, paascode.getHintAns());
+		
 		ContentValues values = new ContentValues();
-	    values.put(NOTE_PASSCODE_PWD_COL, paascode.getPasscode());
-	    values.put(NOTE_PASSCODE_HNT_ANS_COL, paascode.getHintAns());
+	    values.put(NOTE_PASSCODE_PWD_COL, passCodeEnc);
+	    values.put(NOTE_PASSCODE_HNT_ANS_COL, hintAnsEnc);
 	    
 	    long insertId = database.insert(NOTE_PASSCODE_TABLE, null,
 	        values);
@@ -33,22 +37,34 @@ public class PassCodeData {
 	    		all_pwd_Columns, NOTE_PASSCODE_ID_COL + " = " + insertId, null,null, null, null);
 	    
 	    cursor.moveToFirst();
-	    PassCode passCode = new PassCode(cursor.getInt(0),cursor.getString(1),cursor.getString(2));
+	    
+	    String passCodeDcpt = PassCodeUtil.encryptedPassword(NoteConstant.APP_KEY, cursor.getString(1));
+		String hintAnsDcpt = PassCodeUtil.encryptedPassword(NoteConstant.APP_KEY, cursor.getString(2));
+		
+	    PassCode passCodeObj = new PassCode(cursor.getInt(0),passCodeDcpt,hintAnsDcpt);
 	    cursor.close();
 	    
-	    return passCode;
+	    return passCodeObj;
 	}
 	public PassCode updatePassCode(PassCode paascode){
+		
+		String passCodeEnc = PassCodeUtil.encryptedPassword(NoteConstant.APP_KEY, paascode.getPasscode());
+		String hintAnsEnc = PassCodeUtil.encryptedPassword(NoteConstant.APP_KEY, paascode.getHintAns());
+		
+		
 		ContentValues values = new ContentValues();
-	    values.put(NOTE_PASSCODE_PWD_COL, paascode.getPasscode());
-	    values.put(NOTE_PASSCODE_HNT_ANS_COL, paascode.getHintAns());
+	    values.put(NOTE_PASSCODE_PWD_COL, passCodeEnc);
+	    values.put(NOTE_PASSCODE_HNT_ANS_COL, hintAnsEnc);
 	    
 	    database.update(NOTE_PASSCODE_TABLE, values, null,null);
 	    Cursor cursor = database.query(NOTE_PASSCODE_TABLE,
 	    		all_pwd_Columns, null, null,null, null, null);
 	    
 	    cursor.moveToFirst();
-	    PassCode passCode = new PassCode(cursor.getInt(0),cursor.getString(1),cursor.getString(2));
+	    String passCodeDcpt = PassCodeUtil.decryptedPassword(NoteConstant.APP_KEY, cursor.getString(1));
+		String hintAnsDcpt = PassCodeUtil.decryptedPassword(NoteConstant.APP_KEY, cursor.getString(2));
+		
+	    PassCode passCode = new PassCode(cursor.getInt(0),passCodeDcpt,hintAnsDcpt);
 	    cursor.close();
 	    return passCode;
 	}
@@ -57,12 +73,16 @@ public class PassCodeData {
 	    		all_pwd_Columns, null, null,null, null, null);
 	    
 	    cursor.moveToFirst();
-	    PassCode passCode = new PassCode(cursor.getInt(0),cursor.getString(1),cursor.getString(2));
+	    String passCodeDcpt = PassCodeUtil.decryptedPassword(NoteConstant.APP_KEY, cursor.getString(1));
+		String hintAnsDcpt = PassCodeUtil.decryptedPassword(NoteConstant.APP_KEY, cursor.getString(2));
+		
+	    PassCode passCode = new PassCode(cursor.getInt(0),passCodeDcpt,hintAnsDcpt);
 	    cursor.close();
 	    
 	    return passCode;
 	}
 	public boolean verifyPassCode(String passcode){
+		
 		Cursor cursor = database.query(NOTE_PASSCODE_TABLE,
 	    		all_pwd_Columns, null, null,null, null, null);
 	    
@@ -70,7 +90,12 @@ public class PassCodeData {
 			return false;
 		}
 	    cursor.moveToFirst();
-	    PassCode passCodeObj = new PassCode(cursor.getInt(0),cursor.getString(1),cursor.getString(2));
+	    
+	    String passCodeDcpt = PassCodeUtil.decryptedPassword(NoteConstant.APP_KEY, cursor.getString(1));
+		String hintAnsDcpt = PassCodeUtil.decryptedPassword(NoteConstant.APP_KEY, cursor.getString(2));
+		
+	    PassCode passCodeObj = new PassCode(cursor.getInt(0),passCodeDcpt,hintAnsDcpt);
+	    
 	    cursor.close();
 	    if(passcode!=null && passCodeObj!=null && passcode.trim().equals(passCodeObj.getPasscode())){
 	    	return true;
@@ -87,9 +112,10 @@ public class PassCodeData {
 			return false;
 		}
 	    cursor.moveToFirst();
-	    PassCode passCodeObj = new PassCode(cursor.getInt(0),cursor.getString(1),cursor.getString(2));
-	    System.out.println("passCodeObj.hintAns"+passCodeObj.getHintAns());
-	    System.out.println("hintAns"+hintAns);
+	    String passCodeDcpt = PassCodeUtil.decryptedPassword(NoteConstant.APP_KEY, cursor.getString(1));
+		String hintAnsDcpt = PassCodeUtil.decryptedPassword(NoteConstant.APP_KEY, cursor.getString(2));
+		
+	    PassCode passCodeObj = new PassCode(cursor.getInt(0),passCodeDcpt,hintAnsDcpt);
 	    cursor.close();
 	    if(hintAns!=null && passCodeObj!=null && passCodeObj.getHintAns()!=null && hintAns.trim().equals(passCodeObj.getHintAns().trim())){
 	    	return true;
@@ -107,9 +133,12 @@ public class PassCodeData {
 			return false;	
 		}
 	    cursor.moveToFirst();
-	    PassCode passCodeObj = new PassCode(cursor.getInt(0),cursor.getString(1),cursor.getString(2));
+	    String passCodeDcpt = PassCodeUtil.decryptedPassword(NoteConstant.APP_KEY, cursor.getString(1));
+		String hintAnsDcpt = PassCodeUtil.decryptedPassword(NoteConstant.APP_KEY, cursor.getString(2));
+		
+	    PassCode passCodeObj = new PassCode(cursor.getInt(0),passCodeDcpt,hintAnsDcpt);
 	    cursor.close();
-	    System.out.println("passCodeObj: "+passCodeObj.getId());
+	    
 	    if(passCodeObj!=null &&  passCodeObj.getId()!=0){
 	    	return true;
 	    }else{
