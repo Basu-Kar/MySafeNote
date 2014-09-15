@@ -60,6 +60,7 @@ public class NoteData {
 	    
 		cursor.moveToFirst();
 		while (!cursor.isAfterLast()) {
+			System.out.println("cursor.getInt(0):"+cursor.getInt(0));
 			Note noteObj = new Note(cursor.getInt(0),cursor.getString(1),cursor.getString(2));
 			noteList.add(noteObj);
 			cursor.moveToNext();
@@ -74,9 +75,9 @@ public class NoteData {
 	    values.put(NOTE_TITLE_COL, note.getSubject());
 	    values.put(NOTE_VAL_COL, note.getNote());
 	    String[] arr={note.getSubject()};
-	    database.update(NOTE_TABLE, values, NOTE_TITLE_COL+" = ",arr );
+	    database.update(NOTE_TABLE, values, NOTE_ID_COL+" = "+note.getId(),null );
 	    Cursor cursor = database.query(NOTE_TABLE,
-	    		all_note_Columns, NOTE_TITLE_COL+" = "+note.getSubject(),null,null, null, null);
+	    		all_note_Columns, NOTE_ID_COL+" = "+note.getId(),null,null, null, null);
 	    
 	    cursor.moveToFirst();
 	    Note noteObj = new Note(cursor.getInt(0),cursor.getString(1),cursor.getString(2));

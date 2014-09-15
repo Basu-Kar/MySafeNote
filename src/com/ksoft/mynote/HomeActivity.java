@@ -36,6 +36,7 @@ public class HomeActivity extends ListActivity implements View.OnClickListener{
 	private String[] noteList;
 	private NoteData noteData;
 	private PassCodeData passCodeData;
+	List<Note> notes = null;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -82,7 +83,7 @@ public class HomeActivity extends ListActivity implements View.OnClickListener{
 	}
 	
 	private void updateListView(){
-		List<Note> notes = noteData.getNotes();
+		notes = noteData.getNotes();
 		System.out.println(notes+">>>>>>>>>>>>>");		
 		noteList=new String[notes.size()];
 		int count=0;
@@ -115,18 +116,29 @@ public class HomeActivity extends ListActivity implements View.OnClickListener{
 	        m.inflate(R.menu.list_notes, menu);  
 	   }  
 	@Override  
-	   public boolean onContextItemSelected(MenuItem item) {  
+	   public boolean onContextItemSelected(MenuItem item) {
+			AdapterContextMenuInfo info = (AdapterContextMenuInfo) item.getMenuInfo();  
+			int position = (int) info.id;  
+        
 	        switch(item.getItemId()){  
 	             case R.id.delete_item:  
-	                  AdapterContextMenuInfo info = (AdapterContextMenuInfo) item.getMenuInfo();  
-	                 int position = (int) info.id;  
+	                  
 	                Note note= new Note(noteList[position]);
 	                 noteData.deleteNote(note);
 	                 updateListView();
 	                 Toast.makeText (this,
 	                         "Note Deleted: " + note.getSubject(),
 	                         Toast.LENGTH_SHORT).show();
-	                  return true;  
+	                  return true;
+	             case R.id.view_item:
+	            	 Note noteobj = notes.get(position);
+	            	 Intent intent = new Intent(this,ShowNoteActivity.class);
+	            	 intent.putExtra("noteId", noteobj.getId());
+	            	 intent.putExtra("noteSubject", noteobj.getSubject());
+	            	 intent.putExtra("noteDetails", noteobj.getNote());
+	            	 
+	            	 startActivity(intent);
+	            	 
 	        }  
 	        return super.onContextItemSelected(item);  
 	   }  
@@ -151,21 +163,21 @@ public class HomeActivity extends ListActivity implements View.OnClickListener{
 
 	@Override
 	public void onClick(View v) {
-		TextView subjectId = (TextView) findViewById(R.id.home_text_edit_id);
-		System.out.println("subjectId: "+subjectId.getText());
+		//TextView subjectId = (TextView) findViewById(R.id.home_text_edit_id);
+		//System.out.println("subjectId: "+subjectId.getText());
 		
-		if(isValidEntry()){
+		//if(isValidEntry()){
 			Intent intent = new Intent(this, AddNoteActivity.class);
 			   
-		    intent.putExtra("subjectId", subjectId.getText().toString());
+		    //intent.putExtra("subjectId", subjectId.getText().toString());
 		    startActivity(intent);
-		}
+		//}
 		
 		
 	}
 	
-	private boolean isValidEntry(){
-		boolean valid=true;
+	//private boolean isValidEntry(){
+		/*boolean valid=true;
 		TextView noteView = (TextView) findViewById(R.id.home_text_edit_id);
 		
 		if("".equals(noteView.getText().toString().trim()) ){
@@ -174,15 +186,15 @@ public class HomeActivity extends ListActivity implements View.OnClickListener{
 		}else if(noteView.getText().toString().trim().length()<3){
 			noteView.setError("Minimum 3 characters");
 			valid = false;
-		}
+		}*/
 		
 		/*List<PasswordEntry> values = passwordDAO.getAccount(acTypeView.getText().toString());
 		if(values!=null && values.size()>0){
 			acTypeView.setError("Already Exists");
 			valid = false;
 		}*/
-		return valid;
-	}
+		//return valid;
+	//}
 	
 /*	public class PwdEntryAdapter extends BaseAdapter{
 

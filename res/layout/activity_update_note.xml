@@ -6,35 +6,16 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context=".AddNoteActivity" 
-    android:background="@color/bgcolor"
-    >
+    tools:context="com.ksoft.mynote.UpdateNoteActivity" 
+     android:background="@color/bgcolor">
 
-    <Button
-        android:id="@+id/add_note_saveandexit"
+    <EditText
+        android:id="@+id/update_note_details_id"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
-        android:layout_below="@+id/editNote"
-        android:layout_marginTop="20dp"
-        android:text="Save and AddNew" />
-
-    <Button
-        android:id="@+id/add_note_saveandaddnew"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/add_note_saveandexit"
-        android:layout_alignBottom="@+id/add_note_saveandexit"
         android:layout_alignParentRight="true"
-        android:text="Save and Exit" />
-
-    <EditText
-        android:id="@+id/editNote"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/add_note_saveandexit"
-        android:layout_alignRight="@+id/add_note_saveandaddnew"
-        android:layout_below="@+id/add_note_subject_id"
+        android:layout_below="@+id/update_note_subject_label"
         android:layout_marginTop="24dp"
         android:background="@drawable/edit_text"
         android:ems="10"
@@ -52,24 +33,24 @@
     </EditText>
 
     <TextView
-        android:id="@+id/add_note_subject_id"
+        android:id="@+id/update_note_subject_label"
         style="@style/ViewTextFont"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/editNote"
+        android:layout_alignLeft="@+id/update_note_details_id"
         android:layout_alignParentTop="true"
         android:layout_marginTop="20dp"
         android:text="@string/add_note_type_label"
         android:textSize="20sp" />
 
     <EditText
-        android:id="@+id/note_title"
+        android:id="@+id/update_note_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/add_note_subject_id"
-        android:layout_alignBottom="@+id/add_note_subject_id"
+        android:layout_alignBaseline="@+id/update_note_subject_label"
+        android:layout_alignBottom="@+id/update_note_subject_label"
         android:layout_marginLeft="14dp"
-        android:layout_toRightOf="@+id/add_note_subject_id"
+        android:layout_toRightOf="@+id/update_note_subject_label"
         android:background="@drawable/edit_text"
         android:ems="10"
         android:hint="@string/home_text_dflt"
@@ -78,5 +59,24 @@
         android:textColor="@color/home_edit_textcolor"
         android:textSize="21sp"
         android:textStyle="italic|bold" />
+
+    <Button
+        android:id="@+id/update_note_update"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/update_note_details_id"
+        android:text="Update" />
+
+    <TextView
+        android:id="@+id/update_note_id"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/update_note_update"
+        android:layout_alignBottom="@+id/update_note_update"
+        android:layout_alignLeft="@+id/update_note_details_id"
+        android:text="TextView" 
+        android:visibility="gone"
+        />
 
 </RelativeLayout>

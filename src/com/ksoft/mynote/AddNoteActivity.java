@@ -23,9 +23,9 @@ public class AddNoteActivity extends Activity implements View.OnClickListener{
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_add_note);
-		Intent intent = getIntent();
-		TextView noteSubjView = (TextView) findViewById(R.id.add_note_subject_id);
-		noteSubjView.setText(intent.getStringExtra("subjectId"));
+		//Intent intent = getIntent();
+		//TextView noteSubjView = (TextView) findViewById(R.id.add_note_subject_id);
+		//noteSubjView.setText(intent.getStringExtra("subjectId"));
 				
 		Button btn = (Button) findViewById(R.id.add_note_saveandexit);
 		btn.setOnClickListener(this);
@@ -64,7 +64,8 @@ public class AddNoteActivity extends Activity implements View.OnClickListener{
 	@Override
 	public void onClick(View v) {
 		TextView view = (TextView)v;
-		TextView noteSubjView = (TextView) findViewById(R.id.add_note_subject_id);
+		//TextView noteSubjView = (TextView) findViewById(R.id.add_note_subject_id);
+		TextView noteSubjView = (TextView) findViewById(R.id.note_title);
 		TextView noteView = (TextView) findViewById(R.id.editNote);
 		if(isValidEntry()){
 			if("Save and Exit".equals(view.getText().toString())){
@@ -83,7 +84,15 @@ public class AddNoteActivity extends Activity implements View.OnClickListener{
 		boolean valid=true;
 		TextView noteView = (TextView) findViewById(R.id.editNote);
 		
-		if("".equals(noteView.getText().toString().trim()) ){
+		TextView noteSubjView = (TextView) findViewById(R.id.note_title);
+		
+		if("".equals(noteSubjView.getText().toString().trim()) ){
+			noteSubjView.setError("Blank Not Allowed");
+			valid = false;
+		}else if(noteSubjView.getText().toString().trim().length()<3){
+			noteSubjView.setError("Minimum 3 characters");
+			valid = false;
+		}else if("".equals(noteView.getText().toString().trim()) ){
 			noteView.setError("Blank Not Allowed");
 			valid = false;
 		}else if(noteView.getText().toString().trim().length()<5){

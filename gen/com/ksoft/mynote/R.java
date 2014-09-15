@@ -16,9 +16,16 @@ public final class R {
         public static final int bgcolor=0x7f070000;
         public static final int home_edit_textcolor=0x7f070003;
         public static final int home_listview_textcolor=0x7f070004;
+        public static final int show_label_line_color=0x7f070005;
+        public static final int show_label_text_color=0x7f070006;
     }
     public static final class dimen {
         /**  Default screen margins, per the Android Design guidelines. 
+
+         Example customization of dimensions originally defined in res/values/dimens.xml
+         (such as screen margins) for screens with more than 820dp of available width. This
+         would include 7" and 10" devices in landscape (~960dp and ~1280dp respectively).
+    
 
          Customize dimensions originally defined in res/values/dimens.xml (such as
          screen margins) for sw720dp devices (e.g. 10" tablets) in landscape here.
@@ -36,35 +43,43 @@ public final class R {
         public static final int note_lunch=0x7f020005;
     }
     public static final class id {
-        public static final int action_settings=0x7f090016;
-        public static final int add_note_rstpwd_action_id=0x7f090015;
-        public static final int add_note_saveandaddnew=0x7f090003;
-        public static final int add_note_saveandexit=0x7f090001;
-        public static final int add_note_subject_id=0x7f090000;
-        public static final int button1=0x7f090014;
-        public static final int delete_item=0x7f09001a;
-        public static final int editNote=0x7f090002;
-        public static final int edit_item=0x7f090019;
-        public static final int hint_ans=0x7f090008;
-        public static final int home_menu_clrall_action_id=0x7f09001b;
-        public static final int home_menu_rstpwd_action_id=0x7f090017;
+        public static final int action_settings=0x7f09001e;
+        public static final int add_note_rstpwd_action_id=0x7f09001d;
+        public static final int add_note_saveandaddnew=0x7f090002;
+        public static final int add_note_saveandexit=0x7f090000;
+        public static final int add_note_subject_id=0x7f090003;
+        public static final int delete_item=0x7f090022;
+        public static final int editNote=0x7f090001;
+        public static final int edit_item=0x7f090021;
+        public static final int hint_ans=0x7f090009;
+        public static final int home_menu_clrall_action_id=0x7f090023;
+        public static final int home_menu_rstpwd_action_id=0x7f09001f;
         public static final int home_note_btn_id=0x7f09000c;
-        public static final int home_note_label_id=0x7f09000b;
-        public static final int home_text_edit_id=0x7f09000a;
-        public static final int new_password=0x7f090005;
-        public static final int new_pwd=0x7f090010;
-        public static final int notes_display_header=0x7f09000d;
-        public static final int old_pwd=0x7f090013;
-        public static final int pwd_Text=0x7f09000f;
-        public static final int pwd_save=0x7f09000e;
-        public static final int reset_btn=0x7f090012;
-        public static final int reset_menu_pwd_action_id=0x7f09001c;
-        public static final int save_pwd=0x7f090007;
-        public static final int textView1=0x7f090004;
-        public static final int textView3=0x7f090006;
-        public static final int textView4=0x7f090011;
-        public static final int textView5=0x7f090009;
-        public static final int view_item=0x7f090018;
+        public static final int new_password=0x7f090006;
+        public static final int new_pwd=0x7f09000f;
+        public static final int note_title=0x7f090004;
+        public static final int notes_display_header=0x7f09000b;
+        public static final int old_pwd=0x7f090012;
+        public static final int pwd_Text=0x7f09000e;
+        public static final int pwd_save=0x7f09000d;
+        public static final int reset_btn=0x7f090011;
+        public static final int reset_menu_pwd_action_id=0x7f090024;
+        public static final int save_pwd=0x7f090008;
+        public static final int show_note_details_txt_id=0x7f090015;
+        public static final int show_note_edit_btn_id=0x7f090017;
+        public static final int show_note_id_txt_id=0x7f090016;
+        public static final int show_note_subj_txt_id=0x7f090013;
+        public static final int textView1=0x7f090005;
+        public static final int textView2=0x7f090014;
+        public static final int textView3=0x7f090007;
+        public static final int textView4=0x7f090010;
+        public static final int textView5=0x7f09000a;
+        public static final int update_note_details_id=0x7f090018;
+        public static final int update_note_id=0x7f09001c;
+        public static final int update_note_subject_label=0x7f090019;
+        public static final int update_note_title=0x7f09001a;
+        public static final int update_note_update=0x7f09001b;
+        public static final int view_item=0x7f090020;
     }
     public static final class layout {
         public static final int activity_add_note=0x7f030000;
@@ -73,6 +88,7 @@ public final class R {
         public static final int activity_password=0x7f030003;
         public static final int activity_reset_pwd=0x7f030004;
         public static final int activity_show_note=0x7f030005;
+        public static final int activity_update_note=0x7f030006;
     }
     public static final class menu {
         public static final int add_note=0x7f080000;
@@ -82,6 +98,7 @@ public final class R {
         public static final int password=0x7f080004;
         public static final int reset_pwd=0x7f080005;
         public static final int show_note=0x7f080006;
+        public static final int update_note=0x7f080007;
     }
     public static final class string {
         public static final int action_settings=0x7f060001;
@@ -103,6 +120,7 @@ public final class R {
         public static final int title_activity_password=0x7f06000f;
         public static final int title_activity_reset_pwd=0x7f06000d;
         public static final int title_activity_show_note=0x7f060010;
+        public static final int title_activity_update_note=0x7f060014;
         public static final int view_subject=0x7f060013;
     }
     public static final class style {
