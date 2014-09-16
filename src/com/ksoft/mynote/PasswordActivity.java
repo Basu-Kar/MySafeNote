@@ -71,9 +71,9 @@ public class PasswordActivity extends Activity implements View.OnClickListener{
 	            Intent resetPwdIntent = new Intent(this, ResetPwdActivity.class);
 	            startActivity(resetPwdIntent);
 	            return true;
-        	case R.id.home_menu_clrall_action_id:
-        		passCodeData.deletePassCode();
-            
+        	/*case R.id.home_menu_clrall_action_id:
+        		passCodeData.deletePassCode();*/
+        	
         }
         return false;
     }

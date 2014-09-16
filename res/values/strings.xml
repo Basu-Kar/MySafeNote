@@ -6,6 +6,8 @@
     <string name="hello_world">Hello world!</string>
     <string name="home_menu_enbpwd_lbl">Enable Safe Note</string>
     <string name="home_menu_rstpwd_lbl">Reset Password</string>
+    <string name="show_note_menu_edit_lbl">Edit Note</string>
+    
     <string name="home_menu_clrall_lbl">Clear All</string>
     <string name="home_pwd_ptrotc_label">Enable Safe Note</string>
     <string name="home_lock_label">Password</string>

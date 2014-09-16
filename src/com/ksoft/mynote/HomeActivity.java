@@ -119,25 +119,33 @@ public class HomeActivity extends ListActivity implements View.OnClickListener{
 	   public boolean onContextItemSelected(MenuItem item) {
 			AdapterContextMenuInfo info = (AdapterContextMenuInfo) item.getMenuInfo();  
 			int position = (int) info.id;  
-        
+			Note noteobj = notes.get(position);
 	        switch(item.getItemId()){  
 	             case R.id.delete_item:  
 	                  
-	                Note note= new Note(noteList[position]);
-	                 noteData.deleteNote(note);
+	                //Note note= new Note(noteList[position]);
+	                 noteData.deleteNote( noteobj);
 	                 updateListView();
 	                 Toast.makeText (this,
-	                         "Note Deleted: " + note.getSubject(),
+	                         "Note Deleted: " +  noteobj.getSubject(),
 	                         Toast.LENGTH_SHORT).show();
 	                  return true;
 	             case R.id.view_item:
-	            	 Note noteobj = notes.get(position);
+	            	 
 	            	 Intent intent = new Intent(this,ShowNoteActivity.class);
 	            	 intent.putExtra("noteId", noteobj.getId());
 	            	 intent.putExtra("noteSubject", noteobj.getSubject());
 	            	 intent.putExtra("noteDetails", noteobj.getNote());
-	            	 
 	            	 startActivity(intent);
+	            	 return true;
+	             case R.id.edit_item:
+	            	
+	            	 Intent intentEdit = new Intent(this,UpdateNoteActivity.class);
+	            	 intentEdit.putExtra("noteId", noteobj.getId()+"");
+	            	 intentEdit.putExtra("noteSubject", noteobj.getSubject());
+	            	 intentEdit.putExtra("noteDetails", noteobj.getNote());
+	            	 startActivity(intentEdit);
+	            	 return true;
 	            	 
 	        }  
 	        return super.onContextItemSelected(item);  

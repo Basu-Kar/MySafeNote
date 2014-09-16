@@ -47,9 +47,29 @@ public class NoteData {
 		return noteObj;
 	}
 	
+	
+	public boolean isDuplicateTitle(String noteTitle){
+		boolean duplicate = false;
+		Cursor cursor = database.query(NOTE_TABLE,
+	    		all_note_Columns, null,null,null, null, null);
+	    
+		cursor.moveToFirst();
+		while (!cursor.isAfterLast()) {
+			if(noteTitle!=null && noteTitle.equalsIgnoreCase(cursor.getString(1))){
+				duplicate=true;
+				break;
+			}
+			cursor.moveToNext();
+	    }
+	    cursor.close();
+	    
+		return duplicate;
+		
+	}
+	
 	public int deleteNote(Note note){
-		String[] arr = {note.getSubject()};
-	    return database.delete(NOTE_TABLE, NOTE_TITLE_COL
+		String[] arr = {note.getId()+""};
+	    return database.delete(NOTE_TABLE, NOTE_ID_COL
 	        + " =? " ,arr );
 	}
 	

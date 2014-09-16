@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.app.Activity;
 import android.content.Intent;
 import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -36,7 +37,21 @@ public class ShowNoteActivity extends Activity implements View.OnClickListener{
 		getMenuInflater().inflate(R.menu.show_note, menu);
 		return true;
 	}
-
+	
+	@Override
+    public boolean onOptionsItemSelected(MenuItem item)
+    {
+         
+        switch (item.getItemId())
+        {
+        	case R.id.show_note_rstpwd_action_id:
+	            Intent resetPwdIntent = new Intent(this, ResetPwdActivity.class);
+	            startActivity(resetPwdIntent);
+	            return true;
+            
+        }
+        return false;
+    }
 	@Override
 	public void onClick(View arg0) {
 		TextView subjText = (TextView) findViewById(R.id.show_note_subj_txt_id);

@@ -27,8 +27,8 @@ public class AddNoteActivity extends Activity implements View.OnClickListener{
 		//TextView noteSubjView = (TextView) findViewById(R.id.add_note_subject_id);
 		//noteSubjView.setText(intent.getStringExtra("subjectId"));
 				
-		Button btn = (Button) findViewById(R.id.add_note_saveandexit);
-		btn.setOnClickListener(this);
+		//Button btn = (Button) findViewById(R.id.add_note_saveandexit);
+		//btn.setOnClickListener(this);
 		
 		Button btn2 = (Button) findViewById(R.id.add_note_saveandaddnew);
 		btn2.setOnClickListener(this);
@@ -68,14 +68,15 @@ public class AddNoteActivity extends Activity implements View.OnClickListener{
 		TextView noteSubjView = (TextView) findViewById(R.id.note_title);
 		TextView noteView = (TextView) findViewById(R.id.editNote);
 		if(isValidEntry()){
-			if("Save and Exit".equals(view.getText().toString())){
+			if("Save".equals(view.getText().toString())){
 				Toast.makeText(AddNoteActivity.this, noteSubjView.getText().toString(), Toast.LENGTH_LONG).show();
 				noteData.insertNote(new Note(noteSubjView.getText().toString().trim(),noteView.getText().toString().trim()));
 				Intent intent = new Intent(this, HomeActivity.class);
+				intent.putExtra("virified", true);
 			    startActivity(intent);
-			}else if("Save and AddNew".equals(view.getText().toString())){
+			}/*else if("Save and AddNew".equals(view.getText().toString())){
 				Toast.makeText(AddNoteActivity.this, noteView.getText().toString(), Toast.LENGTH_LONG).show();
-			}
+			}*/
 		}
 		
 	}
@@ -98,15 +99,16 @@ public class AddNoteActivity extends Activity implements View.OnClickListener{
 		}else if(noteView.getText().toString().trim().length()<5){
 			noteView.setError("Minimum 5 characters");
 			valid = false;
+		}else if(noteData.isDuplicateTitle(noteSubjView.getText().toString().trim())){
+			noteView.setError("Note title already exists");
+			valid = false;
 		}
 		
-		/*List<PasswordEntry> values = passwordDAO.getAccount(acTypeView.getText().toString());
-		if(values!=null && values.size()>0){
-			acTypeView.setError("Already Exists");
-			valid = false;
-		}*/
+		
 		return valid;
 	}
+	
+	
 	
 
 }
