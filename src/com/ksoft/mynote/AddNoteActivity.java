@@ -1,7 +1,5 @@
 package com.ksoft.mynote;
 
-import java.util.List;
-
 import com.ksoft.data.Note;
 import com.ksoft.data.NoteData;
 

@@ -60,8 +60,8 @@ public class ResetPwdActivity extends Activity implements View.OnClickListener{
 		TextView hintAnsView = (TextView) findViewById(R.id.hint_ans);
 		
 		if(isValidEntry()){
-			passCodeData.deletePassCode();
-			passCodeData.insertPassCode(new PassCode(newPwdView.getText().toString().trim(),hintAnsView.getText().toString().trim()));
+			//passCodeData.deletePassCode();
+			passCodeData.updatePassCode(new PassCode(newPwdView.getText().toString().trim(),hintAnsView.getText().toString().trim()));
 			Intent intent = new Intent(this, PasswordActivity.class);
 			   
 		    startActivity(intent);

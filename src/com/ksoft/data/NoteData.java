@@ -20,11 +20,25 @@ public class NoteData {
 			NOTE_TITLE_COL,
 			NOTE_VAL_COL 
 			};
+	private String[] password_Column = { NOTE_PASSCODE_PWD_COL
+			};
+	
+	public String getPassCode(){
+		Cursor cursor = database.query(NOTE_PASSCODE_TABLE,
+				password_Column, null, null,null, null, null);
+	    
+	    cursor.moveToFirst();
+	    String passCodeDcpt = PassCodeUtil.decryptedPassword(NoteConstant.APP_KEY, cursor.getString(0));
+	    cursor.close();
+	    
+	    return passCodeDcpt;
+	}
 	
 	public Note insertNote(Note note){
+		String passCode = getPassCode();
 		ContentValues values = new ContentValues();
-	    values.put(NOTE_TITLE_COL, note.getSubject());
-	    values.put(NOTE_VAL_COL, note.getNote());
+	    values.put(NOTE_TITLE_COL, note.getSubject().trim());
+	    values.put(NOTE_VAL_COL, PassCodeUtil.encryptedData(passCode, note.getNote().trim()) );
 	    
 	    long insertId = database.insert(NOTE_TABLE, null,
 	        values);
@@ -32,17 +46,18 @@ public class NoteData {
 	    		all_note_Columns, NOTE_ID_COL + " = " + insertId, null,null, null, null);
 	    
 	    cursor.moveToFirst();
-	    Note noteObj = new Note(cursor.getInt(0),cursor.getString(1),cursor.getString(2));
+	    Note noteObj = new Note(cursor.getInt(0),cursor.getString(1),PassCodeUtil.decryptedData(passCode, cursor.getString(2)));
 	    cursor.close();
 	    
 	    return noteObj;
 	}
 	
 	public Note getNote(String subject){
+		String passCode = getPassCode();
 		 Cursor cursor = database.query(NOTE_TABLE,
 		    		all_note_Columns, NOTE_TITLE_COL + " = " + subject, null,null, null, null);
 		    cursor.moveToFirst();
-		    Note noteObj = new Note(cursor.getInt(0),cursor.getString(1),cursor.getString(2));
+		    Note noteObj = new Note(cursor.getInt(0),cursor.getString(1),PassCodeUtil.decryptedData(passCode, cursor.getString(2)));
 		    cursor.close();
 		return noteObj;
 	}
@@ -55,7 +70,7 @@ public class NoteData {
 	    
 		cursor.moveToFirst();
 		while (!cursor.isAfterLast()) {
-			if(noteTitle!=null && noteTitle.equalsIgnoreCase(cursor.getString(1))){
+			if(noteTitle!=null && noteTitle.trim().equalsIgnoreCase(cursor.getString(1))){
 				duplicate=true;
 				break;
 			}
@@ -74,14 +89,15 @@ public class NoteData {
 	}
 	
 	public List<Note> getNotes(){
+		String passCode = getPassCode();
 		List<Note> noteList = new ArrayList<Note>();
 		Cursor cursor = database.query(NOTE_TABLE,
 	    		all_note_Columns, null,null,null, null, null);
 	    
 		cursor.moveToFirst();
 		while (!cursor.isAfterLast()) {
-			System.out.println("cursor.getInt(0):"+cursor.getInt(0));
-			Note noteObj = new Note(cursor.getInt(0),cursor.getString(1),cursor.getString(2));
+			//System.out.println("cursor.getInt(0):"+cursor.getInt(0));
+			Note noteObj = new Note(cursor.getInt(0),cursor.getString(1),PassCodeUtil.decryptedData(passCode, cursor.getString(2)));
 			noteList.add(noteObj);
 			cursor.moveToNext();
 	    }
@@ -91,16 +107,17 @@ public class NoteData {
 	}
 	
 	public Note updateNote(Note note){
+		String passCode = getPassCode();
 		ContentValues values = new ContentValues();
-	    values.put(NOTE_TITLE_COL, note.getSubject());
-	    values.put(NOTE_VAL_COL, note.getNote());
-	    String[] arr={note.getSubject()};
+	    values.put(NOTE_TITLE_COL, note.getSubject().trim());
+	    values.put(NOTE_VAL_COL, PassCodeUtil.encryptedData(passCode,note.getNote().trim()));
+	    //String[] arr={note.getSubject()};
 	    database.update(NOTE_TABLE, values, NOTE_ID_COL+" = "+note.getId(),null );
 	    Cursor cursor = database.query(NOTE_TABLE,
 	    		all_note_Columns, NOTE_ID_COL+" = "+note.getId(),null,null, null, null);
 	    
 	    cursor.moveToFirst();
-	    Note noteObj = new Note(cursor.getInt(0),cursor.getString(1),cursor.getString(2));
+	    Note noteObj = new Note(cursor.getInt(0),cursor.getString(1),PassCodeUtil.decryptedData(passCode, cursor.getString(2)));
 	    cursor.close();
 	    return noteObj;
 	}
