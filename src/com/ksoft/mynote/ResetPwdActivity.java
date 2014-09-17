@@ -71,11 +71,15 @@ public class ResetPwdActivity extends Activity implements View.OnClickListener{
 	
 	private boolean isValidEntry(){
 		boolean valid=true;
+		boolean validPwd=false;
 		TextView oldPwdView = (TextView) findViewById(R.id.old_pwd);
 		TextView newPwdView = (TextView) findViewById(R.id.new_pwd);
 		TextView hintAnsView = (TextView) findViewById(R.id.hint_ans);
 		
-		if("".equals(oldPwdView.getText().toString().trim()) && "".equals(hintAnsView.getText().toString().trim())){
+		
+		
+		
+		/*if("".equals(oldPwdView.getText().toString().trim()) && "".equals(hintAnsView.getText().toString().trim())){
 			if("".equals(oldPwdView.getText().toString().trim())){
 				oldPwdView.setError("Blank Not Allowed");
 			}else if("".equals(hintAnsView.getText().toString().trim())){
@@ -84,25 +88,44 @@ public class ResetPwdActivity extends Activity implements View.OnClickListener{
 			
 			valid = false;
 		}else if(oldPwdView.getText().toString().trim().length()<3 && hintAnsView.getText().toString().trim().length()<3){
-			if(oldPwdView.getText().toString().trim().length()<3){
+			//if(oldPwdView.getText().toString().trim().length()<3){
 				oldPwdView.setError("Minimum 3 characters");
-			}else if(hintAnsView.getText().toString().trim().length()<3){
-				hintAnsView.setError("Blank Not Allowed");
-			}
+			//}else if(hintAnsView.getText().toString().trim().length()<3){
+				hintAnsView.setError("Minimum 3 characters");
+			//}
 			
 			valid = false;
-		}else if(!"".equals(oldPwdView.getText().toString().trim()) && !passCodeData.verifyPassCode(oldPwdView.getText().toString().trim())){
-			oldPwdView.setError("Old Password Not Correct");
-			valid = false;
-		}else if(!"".equals(hintAnsView.getText().toString().trim()) && !passCodeData.verifyHintAns(hintAnsView.getText().toString().trim())){
-			hintAnsView.setError("Hint Answer Not Correct");
-			valid = false;
-		}else if("".equals(newPwdView.getText().toString().trim())){
+		}else if(!passCodeData.verifyPassCode(oldPwdView.getText().toString().trim())
+				|| !(!"".equals(hintAnsView.getText().toString().trim()) && !passCodeData.verifyHintAns(hintAnsView.getText().toString().trim()))
+				){
+			if("".equals(hintAnsView.getText().toString().trim())){
+				
+				valid = false;
+			}
+			if(!passCodeData.verifyPassCode(oldPwdView.getText().toString().trim())){
+				oldPwdView.setError("Either old password or hint answer is not correct");
+				valid = false;
+			}
+		}else */if("".equals(newPwdView.getText().toString().trim())){
 			newPwdView.setError("Blank Not Allowed");
 			valid = false;
 		}else if(newPwdView.getText().toString().trim().length()<3){
 			newPwdView.setError("Minimum 3 characters");
 			valid = false;
+		}else if("".equals(oldPwdView.getText().toString().trim()) && "".equals(hintAnsView.getText().toString().trim())){
+				oldPwdView.setError("Blank Not Allowed");
+				hintAnsView.setError("Blank Not Allowed");
+				valid = false;
+		}else if(oldPwdView.getText().toString().trim().length()<3 && hintAnsView.getText().toString().trim().length()<3){
+				oldPwdView.setError("Minimum 3 characters");
+				hintAnsView.setError("Minimum 3 characters");
+				valid = false;
+		}else if(!passCodeData.verifyPassCode(oldPwdView.getText().toString().trim()) && !passCodeData.verifyHintAns(hintAnsView.getText().toString().trim())){
+			oldPwdView.setError("Both old password and hint answer are not correct");
+			valid = false;
+		}else if(passCodeData.verifyPassCode(oldPwdView.getText().toString().trim()) && !"".equals(hintAnsView.getText().toString().trim())
+				&& hintAnsView.getText().toString().trim().length()<3){
+			hintAnsView.setError("Minimum 3 characters");
 		}
 		
 		/*List<PasswordEntry> values = passwordDAO.getAccount(acTypeView.getText().toString());
